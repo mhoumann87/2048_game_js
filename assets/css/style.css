@@ -1,6 +1,9 @@
 :root {
   /* colors */
 
+  --clr-links: hsla(0, 0%, 13%, 0.8);
+  --clr-hover: hsl(0, 0%, 13%);
+
   /* fonts */
 
   --fs-medium: 1.5rem;
@@ -17,6 +20,14 @@
 /* Resets */
 ul {
   list-style: var(--ul-style, none);
+}
+
+a {
+  color: var(--clr-links)
+
+  &:is(:hover, :focus) {
+    color: var(--clr-hover);
+  }
 }
 
 /* Utillity classes */
@@ -59,6 +70,21 @@ ul {
   border: 0;
 }
 
+/* Only show clink when it is in focus */
+.skip-to-content {
+  position: absolute;
+  z-index: 999;
+  color: var(--clr-links);
+  padding: 0.5em 1em;
+  background: var(--clr-background);
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
 /* Elements */
 
 body {
@@ -84,7 +110,7 @@ header {
 
     & a {
       font-size: var(--fs-medium);
-      color: black;
+      color: var(--clr-links);
       text-decoration: none;
     }
   }
@@ -93,8 +119,12 @@ header {
 /* navigation */
 
 .nav-links {
-  color: black;
+  color: var(--clr-links);
   text-decoration: none;
+
+  &:is(:hover, :focus) {
+    color: var(--clr-hover);
+  }
 }
 
 /* footer */
