@@ -74,15 +74,17 @@
 
     <main id="main">
       <section class="wrapper">
-        <div class="game-box">
-          <article class="info">
+        <div class="game-box grid">
+          <article class="info flex">
             <h1>2048</h1>
             <div class="score-box">
-              <h2 class="score-title">Score <span id="score">0</span></h2>
+              <p class="score-title">Score</p>
+              <p id="score">0</p>
             </div>
-            <p>Join the numbers to get the <b>2048</b> tile</p>
           </article>
-          <div class="grid"></div>
+          <p id="result">Join the numbers to get the <b>2048</b> tile</p>
+
+          <div class="game-grid grid"></div>
         </div>
       </section>
     </main>
