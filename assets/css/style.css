@@ -51,9 +51,18 @@ h1 {
   line-height: 0.7;
   color: var(--clr-headings);
 }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 /* Utillity classes */
 .grid {
   display: grid;
+  gap: var(--grid-gap, 1rem);
   /*  add behaviour in elements */
 }
 
@@ -106,6 +115,19 @@ h1 {
   }
 }
 
+/* Remove animation for people that don't want them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    animation: none;
+  }
+}
+
 /* Elements */
 
 body {
@@ -154,7 +176,6 @@ header {
   width: 29.25rem;
   margin-block-start: 1.875rem;
   margin-inline: auto;
-  gap: 1rem;
 }
 
 .score-box {
